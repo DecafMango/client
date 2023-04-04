@@ -34,6 +34,7 @@ public final class ExecuteScript extends CommandWithArgument {
     }
 
     public static Deque<Request> execute(String filepath) {
+
         System.out.println("Выполнение скрипта №" + (filePathsStack.size() + 1));
         if (filePathsStack.contains(filepath)) {
             System.out.println("Команда execute_script не выполнится, чтобы не допустить рекурсии, так как " +
@@ -49,7 +50,9 @@ public final class ExecuteScript extends CommandWithArgument {
                  BufferedReader bufferedReader = new BufferedReader(reader)) {
 
                 while (bufferedReader.ready()) {
-                    requests.add(bufferedReader.readLine());
+                    String request = bufferedReader.readLine();
+                    if (!request.isBlank())
+                        requests.add(request);
                 }
             }
 

@@ -142,6 +142,7 @@ public final class CommandManager {
                     commands.put(commandName, new CommandWithCreation());
             }
         }
+        isStarted = true;
         System.out.println("Соединение с сервером установлено. Команды инициализированы.");
     }
 

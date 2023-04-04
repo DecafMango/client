@@ -1,6 +1,7 @@
 import command.CommandManager;
 import command.CommandResult;
 import command.Request;
+import command.client_command.ExecuteScript;
 import command.client_command.ObjectSerializer;
 
 import java.io.IOException;
@@ -18,9 +19,24 @@ public class Client {
     private final static String SERVER_HOSTNAME = "localhost";
     private final static int SERVER_PORT = 10000;
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    private static boolean isStartedByScript = false;
+    private static String scriptPath = null;
 
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         DatagramChannel client = startCLient();
+
+        if (args.length != 0) {
+            if (args.length == 1) {
+                isStartedByScript = true;
+                scriptPath = args[0];
+            } else {
+                System.out.println("Для запуска программы либо отсутствует аргумент или " +
+                        "прописывается путь до файла с алгоритмом.");
+                System.exit(0);
+            }
+        } else
+            isStartedByScript = false;
+
         while (true) {
             workWithServer(client);
         }
@@ -45,7 +61,15 @@ public class Client {
 
     private static void workWithServer(DatagramChannel client) throws IOException, ClassNotFoundException,
             PortUnreachableException, SocketTimeoutException {
-        Request clientRequest = getRequest();
+        Request clientRequest;
+
+        if (isStartedByScript && !CommandManager.getIsStarted())
+            clientRequest = new Request("start", null);
+        else if (isStartedByScript)
+            clientRequest = new Request("execute_script", ObjectSerializer.serializeObject(scriptPath));
+        else
+            clientRequest = getRequest();
+
         client.configureBlocking(false);
         byte[] serializedRequest = ObjectSerializer.serializeObject(clientRequest);
         ByteBuffer buffer = ByteBuffer.wrap(serializedRequest);
@@ -61,6 +85,10 @@ public class Client {
                 client.socket().receive(inputPacket);
             } catch (PortUnreachableException e) {
                 System.out.println("Сервер на данный момент отключен - попробуйте подключиться позже.");
+                if (isStartedByScript) {
+                    System.out.println("Завершение работы программы.");
+                    System.exit(0);
+                }
                 CommandManager.setIsStarted(false);
                 return;
             } catch (SocketTimeoutException e) {
@@ -77,11 +105,12 @@ public class Client {
 
             if (clientRequest.getCommandName().equals("start")) {
                 CommandManager.initCommands(serverAnswer.getDefinition());
-                return;
+
+                break;
             }
             else {
                 System.out.println(serverAnswer.getDefinition());
-                return;
+                break;
             }
         }
     }

@@ -1,12 +1,109 @@
-help
-help
-help
-help
-help
-help
-help
-help
-help
-help
-help
-exit
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}
+add {"character":"WISE","depth":1,"color":"BLACK","name":"1","coordinates":[1.0,1],"creationDate":"2023-04-04","type":"WATER","age":1}

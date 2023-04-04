@@ -15,11 +15,13 @@ public class Client {
 
     private static Scanner scanner = new Scanner(System.in);
     private final static String CLIENT_HOSTNAME = "localhost";
-    private final static int CLIENT_PORT = 1234;
+    private final static int CLIENT_PORT = 0;
     private final static String SERVER_HOSTNAME = "localhost";
     private final static int SERVER_PORT = 10000;
 
     private static boolean isStartedByScript = false;
+    private static boolean isAlreadyStartedByScript = false;
+    private static boolean isFinished = false;
     private static String scriptPath = null;
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -29,6 +31,7 @@ public class Client {
             if (args.length == 1) {
                 isStartedByScript = true;
                 scriptPath = args[0];
+                CommandManager.setIsStartedHByScript(true);
             } else {
                 System.out.println("Для запуска программы либо отсутствует аргумент или " +
                         "прописывается путь до файла с алгоритмом.");
@@ -61,14 +64,7 @@ public class Client {
 
     private static void workWithServer(DatagramChannel client) throws IOException, ClassNotFoundException,
             PortUnreachableException, SocketTimeoutException {
-        Request clientRequest;
-
-        if (isStartedByScript && !CommandManager.getIsStarted())
-            clientRequest = new Request("start", null);
-        else if (isStartedByScript)
-            clientRequest = new Request("execute_script", ObjectSerializer.serializeObject(scriptPath));
-        else
-            clientRequest = getRequest();
+        Request clientRequest = getRequest();
 
         client.configureBlocking(false);
         byte[] serializedRequest = ObjectSerializer.serializeObject(clientRequest);
@@ -105,8 +101,7 @@ public class Client {
 
             if (clientRequest.getCommandName().equals("start")) {
                 CommandManager.initCommands(serverAnswer.getDefinition());
-
-                break;
+                break ;
             }
             else {
                 System.out.println(serverAnswer.getDefinition());
@@ -115,7 +110,14 @@ public class Client {
         }
     }
 
-    private static Request getRequest() {
+    private static Request getRequest() throws IOException {
+
+        if (isStartedByScript && !CommandManager.getIsStarted())
+            return CommandManager.validateRequest("start");
+        else if (isStartedByScript && !isAlreadyStartedByScript) {
+            isAlreadyStartedByScript = true;
+            return CommandManager.validateRequest("execute_script " + scriptPath);
+        }
 
         if (!CommandManager.getIsReady())
             return CommandManager.validateRequest(null);
@@ -126,7 +128,7 @@ public class Client {
                 System.out.println("Чтобы продолжить дальнейшую работу на сервере - введите команду start.");
             System.out.print("--> ");
             try {
-                 request = scanner.nextLine().trim();
+                request = scanner.nextLine().trim();
             } catch (NoSuchElementException e) {
                 System.out.println("Принудительное завершение работы программы.");
                 System.exit(0);

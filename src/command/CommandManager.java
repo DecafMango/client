@@ -20,9 +20,9 @@ public final class CommandManager {
 
     private static boolean isStarted = false;
     private static boolean isReady = true;
-
     private static Map<String, Command> commands;
     private static Deque<Request> requestQueue;
+    private static boolean isStartedHByScript = false;
 
     static {
         commands = new HashMap<>();
@@ -172,5 +172,13 @@ public final class CommandManager {
 
     public static boolean getIsReady() {
         return isReady;
+    }
+
+    public static void setIsStartedHByScript(boolean isStartedHByScript) {
+        CommandManager.isStartedHByScript = isStartedHByScript;
+    }
+
+    public static boolean isIsStartedHByScript() {
+        return isStartedHByScript;
     }
 }

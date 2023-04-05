@@ -31,7 +31,8 @@ public class Client {
             if (args.length == 1) {
                 isStartedByScript = true;
                 scriptPath = args[0];
-                CommandManager.setIsStartedHByScript(true);
+                ExecuteScript.setIsStartedByScript(true);
+                ExecuteScript.setStartedFilePath(scriptPath);
             } else {
                 System.out.println("Для запуска программы либо отсутствует аргумент или " +
                         "прописывается путь до файла с алгоритмом.");
@@ -105,6 +106,10 @@ public class Client {
             }
             else {
                 System.out.println(serverAnswer.getDefinition());
+                if (CommandManager.getIsReadyToStop()) {
+                    System.out.println("Завершение работы программы");
+                    System.exit(0);
+                }
                 break;
             }
         }

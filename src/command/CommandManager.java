@@ -22,7 +22,8 @@ public final class CommandManager {
     private static boolean isReady = true;
     private static Map<String, Command> commands;
     private static Deque<Request> requestQueue;
-    private static boolean isStartedHByScript = false;
+    private static boolean isReadyToStop = false;
+
 
     static {
         commands = new HashMap<>();
@@ -40,8 +41,11 @@ public final class CommandManager {
             Request nextRequest = requestQueue.pop();
             if (requestQueue.isEmpty())
                 isReady = true;
+            if (ExecuteScript.getIsStartedByScript() && ExecuteScript.getIsFinishedByScript() && requestQueue.size() == 0)
+                isReadyToStop = true;
             return nextRequest;
         }
+
 
         request = request.trim();
         while (request.contains("  "))
@@ -174,11 +178,7 @@ public final class CommandManager {
         return isReady;
     }
 
-    public static void setIsStartedHByScript(boolean isStartedHByScript) {
-        CommandManager.isStartedHByScript = isStartedHByScript;
-    }
-
-    public static boolean isIsStartedHByScript() {
-        return isStartedHByScript;
+    public static boolean getIsReadyToStop() {
+        return isReadyToStop;
     }
 }

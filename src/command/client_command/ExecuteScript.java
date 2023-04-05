@@ -28,15 +28,15 @@ public final class ExecuteScript extends CommandWithArgument {
     private static List<String> filePaths = new ArrayList<>();
     private static List<String> filePathsStack = new ArrayList<>();
     private static boolean isStartedByScript = false;
+    private static boolean isFinishedByScript = false;
+    private static String startedFilePath;
+
 
     public ExecuteScript() {
         super(1);
     }
 
     public static Deque<Request> execute(String filepath) {
-
-        if (CommandManager.isIsStartedHByScript())
-            isStartedByScript = true;
 
         System.out.println("Выполнение скрипта №" + (filePathsStack.size() + 1));
         if (filePathsStack.contains(filepath)) {
@@ -96,6 +96,8 @@ public final class ExecuteScript extends CommandWithArgument {
                 System.out.println("Чтобы запустить приложение через скрипт - он должен содержать хотя бы одну команду.");
                 System.exit(0);
             }
+            if (filepath.equals(startedFilePath))
+                isFinishedByScript = true;
             return validatedRequests;
         } catch (IOException e) {
             e.printStackTrace();
@@ -169,5 +171,19 @@ public final class ExecuteScript extends CommandWithArgument {
         }
     }
 
+    public static void setIsStartedByScript(boolean isStartedByScript) {
+        ExecuteScript.isStartedByScript = isStartedByScript;
+    }
 
+    public static boolean getIsStartedByScript() {
+        return isStartedByScript;
+    }
+
+    public static boolean getIsFinishedByScript() {
+        return isFinishedByScript;
+    }
+
+    public static void setStartedFilePath(String startedFilePath) {
+        ExecuteScript.startedFilePath = startedFilePath;
+    }
 }

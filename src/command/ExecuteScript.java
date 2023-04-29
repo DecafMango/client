@@ -1,9 +1,5 @@
-package command.client_command;
+package command;
 
-import command.CommandManager;
-import command.CommandWithArgument;
-import command.CommandWithCreation;
-import command.Request;
 import dragon.Color;
 import dragon.Coordinates;
 import dragon.DragonCharacter;
@@ -164,7 +160,7 @@ public final class ExecuteScript extends CommandWithArgument {
             }
             LocalDate creationDate = LocalDate.now();
             dragonCharacteristics.put("creationDate", creationDate);
-            return new Request(commandName, ObjectSerializer.serializeObject(dragonCharacteristics));
+            return new Request(CommandManager.getLogin(), commandName, ObjectSerializer.serializeObject(dragonCharacteristics));
         } catch (IOException | ParseException e) {
             e.printStackTrace();
             return null;

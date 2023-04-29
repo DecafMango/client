@@ -1,20 +1,14 @@
 package command;
 
 
-//import command.client_command.ExecuteScript;
+//import command.ExecuteScript;
 
-import command.client_command.ExecuteScript;
-import command.client_command.Exit;
-import command.client_command.Start;
 import dragon.DragonCreator;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public final class CommandManager {
 
@@ -23,18 +17,15 @@ public final class CommandManager {
     private static Map<String, Command> commands;
     private static Deque<Request> requestQueue;
     private static boolean isReadyToStop = false;
-
+    private static String login;
 
     static {
         commands = new HashMap<>();
         requestQueue = new ArrayDeque<>();
-
-        commands.put("start", new Start());
-        commands.put("exit", new Exit());
-        commands.put("execute_script", new ExecuteScript());
     }
 
-    private CommandManager() {}
+    private CommandManager() {
+    }
 
     public static Request validateRequest(String request) {
         if (!requestQueue.isEmpty()) {
@@ -63,19 +54,39 @@ public final class CommandManager {
         }
 
         if (!isStarted) {
-           if (!commandName.equals("start")) {
-               return null;
-           } else {
-               if (requestWords.length != 1) {
-                   System.out.println("Команда start не требует наличия дополнительных аргументов.");
-                   return null;
-               } else {
-                   System.out.println("Соединение с сервером.");
-                   isStarted = true;
-                   return new Request(commandName, null);
-               }
-           }
+            switch (commandName) {
+                case "login":
+                    if (requestWords.length != 1) {
+                        System.out.println("Команда login не требует наличия дополнительных аргументов");
+                        return null;
+                    } else {
+                        String loginAndPassword = getLoginAndPassword();
+                        if (validateLoginAndPassword(loginAndPassword))
+                            return new Request(login, commandName, serializeObject(loginAndPassword));
+                        else
+                            return null;
+                    }
+                case "register":
+                    if (requestWords.length != 1) {
+                        System.out.println("Команда register не требует наличия дополнительных аргументов");
+                        return null;
+                    } else {
+                        String loginAndPassword = getLoginAndPassword();
+                        if (validateLoginAndPassword(loginAndPassword))
+                            return new Request(login, commandName, serializeObject(loginAndPassword));
+                        else
+                            return null;
+                    }
+                default:
+                    return null;
+            }
         } else {
+            if (commandName.equals("logout")) {
+                System.out.println("Выход из текущей записи");
+                isStarted = false;
+                login = null;
+                return null;
+            }
             if (!commands.containsKey(commandName)) {
                 System.out.println("Команды " + commandName + " не существует.\n" +
                         "Попробуйте перезапустить приложение при помощи команды start.\n" +
@@ -87,7 +98,7 @@ public final class CommandManager {
             if (command instanceof CommandWithArgument) {
                 if (requestWords.length != 2) {
                     System.out.println("Команда " + commandName + " требует наличия одного аргумента:\n" +
-                     commandName + " <аргумент> (стрелки писать не нужно - это для акцентирования внимания.");
+                            commandName + " <аргумент> (стрелки писать не нужно - это для акцентирования внимания.");
                     return null;
                 }
                 String argument = requestWords[1];
@@ -102,7 +113,7 @@ public final class CommandManager {
                     return request1;
                 }
                 if (((CommandWithArgument) command).getArgumentType() == 1)
-                    return new Request(commandName, serializeObject(argument));
+                    return new Request(login, commandName, serializeObject(argument));
                 else {
                     try {
                         Integer.parseInt(argument);
@@ -110,18 +121,18 @@ public final class CommandManager {
                         System.out.println("Команда " + commandName + " требует наличие целочисленного аргумента.");
                         return null;
                     }
-                    return new Request(commandName, serializeObject(Integer.parseInt(argument)));
+                    return new Request(login, commandName, serializeObject(Integer.parseInt(argument)));
                 }
 
-            } else  {
+            } else {
                 if (requestWords.length != 1) {
                     System.out.println("Команда " + commandName + " записывается без дополнительных аргументов.");
                     return null;
                 }
                 if (command instanceof CommandWithCreation) {
-                    return new Request(commandName, serializeObject(DragonCreator.createNewDragon()));
+                    return new Request(login, commandName, serializeObject(DragonCreator.createNewDragon()));
                 } else
-                    return new Request(commandName, null);
+                    return new Request(login, commandName, null);
             }
         }
     }
@@ -146,8 +157,43 @@ public final class CommandManager {
                     commands.put(commandName, new CommandWithCreation());
             }
         }
+        commands.put("execute_script", new ExecuteScript());
         isStarted = true;
-        System.out.println("Соединение с сервером установлено. Команды инициализированы.");
+        System.out.println("Команды обновлены");
+    }
+
+    private static String getLoginAndPassword() {
+        Scanner scanner = new Scanner(System.in);
+        String login = "";
+        String password = "";
+        StringBuilder sb = new StringBuilder();
+
+        try {
+            System.out.print("Введите логин: ");
+            login = scanner.nextLine().trim();
+            System.out.print("Введите пароль: ");
+            password = scanner.nextLine().trim();
+        } catch (NoSuchElementException e) {
+            System.out.println("Принудительное завершение работы программы");
+            System.exit(0);
+        }
+        sb.append(login);
+        sb.append(" ");
+        sb.append(password);
+
+        CommandManager.login = login;
+
+        return sb.toString();
+    }
+
+    private static boolean validateLoginAndPassword(String loginAndPassword) {
+        String[] splitLoginAndPassword = loginAndPassword.split(" ");
+        if (splitLoginAndPassword.length != 2) {
+            System.out.println("Логин и пароль не могут быть пустыми");
+            return false;
+        }
+
+        return true;
     }
 
     private static byte[] serializeObject(Object o) {
@@ -180,5 +226,13 @@ public final class CommandManager {
 
     public static boolean getIsReadyToStop() {
         return isReadyToStop;
+    }
+
+    public static String getLogin() {
+        return login;
+    }
+
+    public static void setLogin(String login) {
+        CommandManager.login = login;
     }
 }

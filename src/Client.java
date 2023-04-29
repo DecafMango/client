@@ -1,8 +1,8 @@
 import command.CommandManager;
-import command.CommandResult;
+import command.Response;
 import command.Request;
-import command.client_command.ExecuteScript;
-import command.client_command.ObjectSerializer;
+import command.ExecuteScript;
+import command.ObjectSerializer;
 
 import java.io.IOException;
 import java.net.*;
@@ -98,19 +98,29 @@ public class Client {
                 attemptsCount++;
                 continue nextAttempt;
             }
-            CommandResult serverAnswer = (CommandResult) ObjectSerializer.deserializeObject(inputPacket.getData());
+            Response serverResponse = (Response) ObjectSerializer.deserializeObject(inputPacket.getData());
+            String responseDefinition = serverResponse.getDefinition();
 
-            if (clientRequest.getCommandName().equals("start")) {
-                CommandManager.initCommands(serverAnswer.getDefinition());
-                break ;
-            }
-            else {
-                System.out.println(serverAnswer.getDefinition());
-                if (CommandManager.getIsReadyToStop()) {
-                    System.out.println("Завершение работы программы");
-                    System.exit(0);
-                }
-                break;
+            switch (clientRequest.getCommandName()) {
+                case "login":
+                    if (responseDefinition.equals("Неверный логин или пароль"))
+                        System.out.println(responseDefinition);
+                    else {
+                        System.out.println("Соединение с сервером установлено");
+                        CommandManager.setLogin(clientRequest.getLogin());
+                        CommandManager.setIsStarted(true);
+                        CommandManager.initCommands(responseDefinition);
+                    }
+                    break nextAttempt;
+                case "update":
+                    CommandManager.initCommands(responseDefinition);
+                default:
+                    System.out.println(responseDefinition);
+                    if (CommandManager.getIsReadyToStop()) {
+                        System.out.println("Завершение работы программы");
+                        System.exit(0);
+                    }
+                    break nextAttempt;
             }
         }
     }
@@ -130,7 +140,7 @@ public class Client {
         String request = null;
         while (true) {
             if (!CommandManager.getIsStarted())
-                System.out.println("Чтобы продолжить дальнейшую работу на сервере - введите команду start.");
+                System.out.println("Введите одну из команд:\n\t--> login (авторизация)\n\t--> register (регистрация)");
             System.out.print("--> ");
             try {
                 request = scanner.nextLine().trim();

@@ -1,5 +1,6 @@
 package dragon;
 
+import command.CommandManager;
 import dragon.validators.Validator;
 import dragon.validators.ValidatorManager;
 
@@ -110,6 +111,7 @@ public final class DragonCreator {
                     break;
             } while (!FieldAndValidator.get("depth").isValid(Long.valueOf(depth)));
             dragonCharacteristics.put("cave", userAnswer.equals("") ? null : new DragonCave(depth));
+            dragonCharacteristics.put("owner", CommandManager.getLogin());
         } catch (NoSuchElementException e) {
             System.out.println("АЯ-ЯЙ программу ломать!");
             System.exit(0);

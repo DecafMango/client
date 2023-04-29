@@ -1,4 +1,4 @@
-package command.client_command;
+package command;
 
 import java.io.*;
 

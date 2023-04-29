@@ -17,9 +17,10 @@ public class Dragon implements Serializable {
     private DragonType type; //Поле не может быть null
     private DragonCharacter character; //Поле может быть null
     private DragonCave cave; //Поле может быть null
+    private String owner;
 
     public Dragon(String name, Coordinates coordinates, LocalDate creationDate, Long age, Color color,
-                  DragonType type, DragonCharacter character, DragonCave cave) {
+                  DragonType type, DragonCharacter character, DragonCave cave, String owner) {
         this.id = objCount++;
         this.name = name;
         this.coordinates = coordinates;
@@ -29,6 +30,7 @@ public class Dragon implements Serializable {
         this.type = type;
         this.character = character;
         this.cave = cave;
+        this.owner = owner;
     }
 
     @Override
@@ -75,6 +77,9 @@ public class Dragon implements Serializable {
         return cave;
     }
 
+    public String getOwner() {
+        return owner;
+    }
 
     @Override
     public boolean equals(Object o) {

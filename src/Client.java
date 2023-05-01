@@ -58,13 +58,12 @@ public class Client {
         }
         SocketAddress serverAddress = new InetSocketAddress(SERVER_HOSTNAME, SERVER_PORT);
         client.connect(serverAddress);
-        client.socket().setSoTimeout(3000);
+        client.socket().setSoTimeout(10000);
         System.out.println("Клиент запущен:\nАдрес клиента - " + clientAddress + "\nАдрес сервера: " + serverAddress);
         return client;
     }
 
-    private static void workWithServer(DatagramChannel client) throws IOException, ClassNotFoundException,
-            PortUnreachableException, SocketTimeoutException {
+    private static void workWithServer(DatagramChannel client) throws IOException, ClassNotFoundException {
         Request clientRequest = getRequest();
 
         client.configureBlocking(false);

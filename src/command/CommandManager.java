@@ -37,7 +37,6 @@ public final class CommandManager {
             return nextRequest;
         }
 
-
         request = request.trim();
         while (request.contains("  "))
             request = request.replace("  ", " ");

@@ -160,6 +160,7 @@ public final class ExecuteScript extends CommandWithArgument {
             }
             LocalDate creationDate = LocalDate.now();
             dragonCharacteristics.put("creationDate", creationDate);
+            dragonCharacteristics.put("owner", CommandManager.getLogin());
             return new Request(CommandManager.getLogin(), commandName, ObjectSerializer.serializeObject(dragonCharacteristics));
         } catch (IOException | ParseException e) {
             e.printStackTrace();

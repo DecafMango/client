@@ -6,6 +6,7 @@ import dragon.DragonCharacter;
 import dragon.DragonType;
 import dragon.validators.Validator;
 import dragon.validators.ValidatorManager;
+import gui.Language;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -83,7 +84,7 @@ public final class ExecuteScript extends CommandWithArgument {
                                 commandName + " {\"character\":\"\",\"depth\":,\"color\":\"\",\"name\":\"\",\"coordinates\":[,],\"type\":\"\",\"age\":}");
                     }
                 } else {
-                    validatedRequests.add(CommandManager.validateRequest(request));
+                    //validatedRequests.add(CommandManager.validateRequest(request));
                 }
             }
 
@@ -161,7 +162,7 @@ public final class ExecuteScript extends CommandWithArgument {
             LocalDate creationDate = LocalDate.now();
             dragonCharacteristics.put("creationDate", creationDate);
             dragonCharacteristics.put("owner", CommandManager.getLogin());
-            return new Request(CommandManager.getLogin(), commandName, ObjectSerializer.serializeObject(dragonCharacteristics));
+            return new Request(CommandManager.getLogin(), commandName, ObjectSerializer.serializeObject(dragonCharacteristics), Language.getLanguage());
         } catch (IOException | ParseException e) {
             e.printStackTrace();
             return null;

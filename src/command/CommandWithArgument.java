@@ -11,4 +11,5 @@ public class CommandWithArgument extends Command {
     public int getArgumentType() {
         return argumentType;
     }
+
 }
